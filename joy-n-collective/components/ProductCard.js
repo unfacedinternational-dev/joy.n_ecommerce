@@ -1,0 +1,2 @@
+"use client"; import Link from "next/link"; import {useStore} from "./Store"; import {peso} from "../data/products";
+export default function ProductCard({p}){const {add}=useStore();return <article className="card"><Link href={"/product/"+p.id}><img src={p.image} alt={p.name}/></Link><p className="cat">{p.category}</p><Link href={"/product/"+p.id}><h3>{p.name}</h3></Link><strong>{peso(p.price)}</strong><button onClick={()=>add(p)}>ADD TO CART</button></article>}
